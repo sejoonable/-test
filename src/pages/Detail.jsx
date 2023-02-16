@@ -5,14 +5,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getTodoByID } from '../redux/modules/todos.js';
 
 const Detail = () => {
-  const dispatch = useDispatch();
-  const todo = useSelector((state) => state.todos.todo);
-
-  const navigate = useNavigate();
-
   const param = useParams();
+  const dispatch = useDispatch();
   const detail = dispatch(getTodoByID(param.id));
-  console.log(detail);
+  const todo = useSelector((state) => state.todos.todo);
+  console.log(todo);
+  const navigate = useNavigate();
 
   return (
     <StContainer>

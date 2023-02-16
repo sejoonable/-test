@@ -7,7 +7,6 @@ const TOGGLE_STATUS_TODO = 'TOGGLE_STATUS_TODO';
 // Action Creator
 // Todo를 추가하는 action creator
 export const addTodo = (payload) => {
-  payload.id = Math.random();
   return {
     type: ADD_TODO,
     payload,
@@ -42,14 +41,14 @@ export const getTodoByID = (payload) => {
 const initialState = {
   todos: [
     {
-      id: 0,
+      id: 2352,
       title: '리액트',
       body: '리액트를 배워봅시다',
       isDone: false,
     },
   ],
   todo: {
-    id: 0,
+    id: 1515,
     title: '',
     body: '',
     isDone: false,

@@ -9,7 +9,7 @@ const Form = () => {
   const id = nextId();
 
   const [todo, setTodo] = useState({
-    id: 0,
+    id: Math.random(),
     title: '',
     body: '',
     isDone: false,
@@ -17,7 +17,7 @@ const Form = () => {
 
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
-    setTodo({ ...todo, [name]: value });
+    setTodo({ ...todo, id: Math.random(), [name]: value });
   };
 
   const onSubmitHandler = (event) => {
@@ -25,7 +25,7 @@ const Form = () => {
     if (todo.title.trim() === '' || todo.body.trim() === '') return;
 
     setTodo({
-      id: 0,
+      id: Math.random(),
       title: '',
       body: '',
       isDone: false,
@@ -52,6 +52,7 @@ const Form = () => {
       </StInputGroup>
       <StAddButton
         onClick={() => {
+          setTodo({ ...todo, id: Math.random() });
           dispatch(addTodo(todo));
         }}
       >
