@@ -55,7 +55,7 @@ const List = () => {
       </StListWrapper>
       <h2 className="list-title">Done..! 🎉</h2>
       <StListWrapper>
-        {todos.map((todo, index) => {
+        {todos.map((todo) => {
           if (todo.isDone) {
             return (
               <StTodoContainer key={todo.id}>

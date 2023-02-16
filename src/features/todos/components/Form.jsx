@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import nextId from 'react-id-generator';
@@ -9,7 +9,7 @@ const Form = () => {
   const id = nextId();
 
   const [todo, setTodo] = useState({
-    id: id,
+    id: 0,
     title: '',
     body: '',
     isDone: false,
@@ -17,7 +17,7 @@ const Form = () => {
 
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
-    setTodo({ ...todo, id: id, [name]: value });
+    setTodo({ ...todo, [name]: value });
   };
 
   const onSubmitHandler = (event) => {
@@ -25,7 +25,7 @@ const Form = () => {
     if (todo.title.trim() === '' || todo.body.trim() === '') return;
 
     setTodo({
-      id: id,
+      id: 0,
       title: '',
       body: '',
       isDone: false,

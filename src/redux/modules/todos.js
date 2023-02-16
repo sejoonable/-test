@@ -7,6 +7,7 @@ const TOGGLE_STATUS_TODO = 'TOGGLE_STATUS_TODO';
 // Action Creator
 // Todo를 추가하는 action creator
 export const addTodo = (payload) => {
+  payload.id = Math.random();
   return {
     type: ADD_TODO,
     payload,
